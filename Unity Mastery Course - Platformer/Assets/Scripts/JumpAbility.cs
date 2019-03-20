@@ -6,17 +6,18 @@ public class JumpAbility : MonoBehaviour
     private float jumpForce = 5f;
 
     private Rigidbody2D rb2D;
+    private CharacterGrounding characterGrounding;
 
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        characterGrounding = GetComponent<CharacterGrounding>();
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && characterGrounding.IsGrounded )
         {
-            Debug.Log("Jump Button Pressed");
             rb2D.AddForce(Vector2.up * jumpForce);
         }
     }

@@ -9,9 +9,8 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, vertical);
+        Vector3 movement = new Vector3(horizontal, 0);
 
         transform.position += movement * moveSpeed * Time.fixedDeltaTime;
     }
