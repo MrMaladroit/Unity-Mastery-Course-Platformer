@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(CharacterGrounding))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour, IMove
 {
     public float Speed { get; private set; }
 

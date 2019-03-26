@@ -3,18 +3,18 @@
 public class CharacterAnimation : MonoBehaviour
 {
     private Animator animator;
-    private PlayerMovementController playerMovementController;
+    private IMove mover;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        playerMovementController = GetComponentInChildren<PlayerMovementController>();
+        mover = GetComponentInChildren<IMove>();
 
     }
 
     private void Update()
     {
-        float speed = playerMovementController.Speed;    
+        float speed = mover.Speed;    
         animator.SetFloat("Speed", speed);
     }
 }
