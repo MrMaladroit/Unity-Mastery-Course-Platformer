@@ -21,13 +21,9 @@ public class PlayerMovementController : MonoBehaviour, IMove
     private void FixedUpdate()
     {
         horizontal = Input.GetAxis("Horizontal");
+        Speed = horizontal;
 
         Vector3 movement = new Vector3(horizontal, 0);
-        Speed = Mathf.Abs(horizontal);
-        if (horizontal != 0)
-        {
-            spriteRenderer.flipX = horizontal > 0;
-        }
 
         transform.position += movement * moveSpeed * Time.fixedDeltaTime;
     }
