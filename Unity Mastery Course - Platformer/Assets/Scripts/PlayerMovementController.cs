@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(CharacterGrounding))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
     public float Speed { get; private set; }
