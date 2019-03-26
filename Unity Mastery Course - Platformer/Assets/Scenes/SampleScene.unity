@@ -658,6 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644576939}
   - component: {fileID: 1644576938}
+  - component: {fileID: 1644576940}
   m_Layer: 0
   m_Name: Player GFX
   m_TagString: Untagged
@@ -724,6 +725,24 @@ Transform:
   m_Father: {fileID: 1102298409}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1644576940
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644576937}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cefc78631d31ef4b88d75fefa63c7de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1864135719
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +754,7 @@ GameObject:
   m_Layer: 0
   m_Name: Left Foot
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -763,7 +782,7 @@ GameObject:
   m_Layer: 0
   m_Name: Right Foot
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
