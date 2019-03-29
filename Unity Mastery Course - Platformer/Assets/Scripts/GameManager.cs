@@ -19,12 +19,13 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            Lives = 3;
         }
         else if(instance != this)
         {
             Destroy(gameObject);
         }
+
+        Lives = 3;
     }
 
     public void KillPlayer()
@@ -34,7 +35,33 @@ public class GameManager : MonoBehaviour
         {
             OnLivesChanged(Lives);
         }
-        SceneManager.LoadScene(0);
+
+        if(Lives <= 0)
+        {
+            SceneManager.LoadScene(0);
+            Lives = 3;
+            if (OnLivesChanged != null)
+            {
+                OnLivesChanged(Lives);
+            }
+            Coins = 0;
+            if(OnCoinsChanged != null)
+            {
+                OnCoinsChanged(Coins);
+            }
+        }
+        else
+        {
+            SendPlayerToCheckpoint();
+        }
+    }
+
+    private void SendPlayerToCheckpoint()
+    {
+        var checkpointManager = FindObjectOfType<CheckpointManager>();
+        Checkpoint checkpoint = checkpointManager.GetLastCheckpointThatWasPassed();
+        var player = FindObjectOfType<PlayerMovementController>();
+        player.transform.position = checkpoint.transform.position;
     }
 
     public void AddCoin()
