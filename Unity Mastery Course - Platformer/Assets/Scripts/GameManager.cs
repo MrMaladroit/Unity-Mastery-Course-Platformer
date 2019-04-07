@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int Lives { get; private set; }
     public int Coins { get; private set; }
+    public int TotalCoinsForLifeUp = 10;
 
     public static GameManager instance;
 
@@ -90,6 +91,13 @@ public class GameManager : MonoBehaviour
     public void AddCoin()
     {
         Coins++;
+
+        if(Coins >= TotalCoinsForLifeUp)
+        {
+            AddExtraLife();
+            Coins = 0;
+        }
+
         if(OnCoinsChanged != null)
         {
             OnCoinsChanged(Coins);
