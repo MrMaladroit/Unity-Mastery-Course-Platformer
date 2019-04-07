@@ -11,6 +11,11 @@ public class UILivesText : MonoBehaviour
         livesText.SetText(GameManager.instance.Lives.ToString());
     }
 
+    private void OnDestroy()
+    {
+        GameManager.instance.OnLivesChanged -= HandleOnLivesChanged;
+    }
+
     private void HandleOnLivesChanged(int lives)
     {
         livesText.SetText(lives.ToString());

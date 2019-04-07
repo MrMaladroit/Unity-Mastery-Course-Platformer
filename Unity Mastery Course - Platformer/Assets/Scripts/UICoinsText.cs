@@ -11,6 +11,11 @@ public class UICoinsText : MonoBehaviour
         coinsText.SetText(GameManager.instance.Coins.ToString());
     }
 
+    private void OnDestroy()
+    {
+        GameManager.instance.OnCoinsChanged -= HandleOnCoinsChanged;
+    }
+
     private void HandleOnCoinsChanged(int coins)
     {
         coinsText.SetText(coins.ToString());

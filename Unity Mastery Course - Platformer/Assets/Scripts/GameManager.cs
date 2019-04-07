@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public void KillPlayer()
     {
         Lives--;
+
         if(OnLivesChanged != null)
         {
             OnLivesChanged(Lives);
@@ -62,6 +63,28 @@ public class GameManager : MonoBehaviour
         Checkpoint checkpoint = checkpointManager.GetLastCheckpointThatWasPassed();
         var player = FindObjectOfType<PlayerMovementController>();
         player.transform.position = checkpoint.transform.position;
+    }
+
+    public void HandleCollectible(GameObject gameObject)
+    {
+        if (gameObject.tag == "Life Up")
+        {
+            AddExtraLife();
+        }
+        else if (gameObject.tag == "Coin")
+        {
+            AddCoin();
+        }
+    }
+
+    public void AddExtraLife()
+    {
+        Lives++;
+
+        if(OnLivesChanged != null)
+        {
+            OnLivesChanged(Lives);
+        }
     }
 
     public void AddCoin()

@@ -15,6 +15,11 @@ public class UICoinPulse : MonoBehaviour
         GameManager.instance.OnCoinsChanged += HandleOnCoinsChanged;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.instance.OnCoinsChanged -= HandleOnCoinsChanged;
+    }
+
     private void HandleOnCoinsChanged(int coins)
     {
         animator.SetTrigger("Pulse");
