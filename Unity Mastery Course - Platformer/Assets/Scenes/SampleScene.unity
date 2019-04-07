@@ -1381,7 +1381,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1691,7 +1691,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -4003,6 +4003,7 @@ MonoBehaviour:
   startPosition: {fileID: 600980885}
   endPosition: {fileID: 1594115037}
   sawBladeSprite: {fileID: 1973169105}
+  speed: 5
 --- !u!95 &2133579291
 Animator:
   serializedVersion: 3
