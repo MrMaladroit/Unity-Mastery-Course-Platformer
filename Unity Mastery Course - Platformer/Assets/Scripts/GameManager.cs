@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource deathAudioSource;
+
     public int Lives { get; private set; }
     public int Coins { get; private set; }
     public int TotalCoinsForLifeUp = 10;
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void KillPlayer()
     {
         Lives--;
-
+        deathAudioSource.Play();
         if(OnLivesChanged != null)
         {
             OnLivesChanged(Lives);
